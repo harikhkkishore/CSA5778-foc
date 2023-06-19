@@ -1,0 +1,107 @@
+include <iostream>
+
+using namespace std;
+
+ 
+
+// Function to find factorial
+
+// of a given number
+
+int factorial(int N)
+
+{
+
+    if (N == 1) {
+
+        return 1;
+
+    }
+
+ 
+
+    // Recursive Call
+
+    return N * factorial(N - 1);
+
+}
+
+ 
+
+// Function to find the sum of
+
+// the series 1! - 2! + 3! - 4!
+
+// + 5!... till the Nth term
+
+int SeriesSum(int N)
+
+{
+
+    // Stores Required Sum
+
+    int Sum = 0;
+
+ 
+
+    // Loop to calculate factorial
+
+    // and sum them with their
+
+    // respective sign
+
+    for (int i = 1; i <= N; i++) {
+
+ 
+
+        // Factorial of cur integer
+
+        int fact = factorial(i);
+
+ 
+
+        // Stores the sign
+
+        int sign = fact;
+
+ 
+
+        // If position is even sign
+
+        // must be negative
+
+        if (i % 2 == 0) {
+
+            sign = sign * -1;
+
+        }
+
+ 
+
+        // Adding value in sum
+
+        Sum += sign;
+
+    }
+
+ 
+
+    // Return Answer
+
+    return Sum;
+
+}
+
+ 
+
+// Driver Code
+
+int main()
+
+{
+
+    int N = 6;
+
+    cout << SeriesSum(N);
+
+    return 0;
